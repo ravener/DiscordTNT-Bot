@@ -1,7 +1,8 @@
 const DiscordTNT = require("discord-tnt");
+const config = require("./config.json");
 const client = new DiscordTNT.Client({
-    TOKEN:"BOT TOKEN COMING SOON",
-    GAME:"with DiscordTNT,
+    TOKEN:config.token,
+    GAME:"with DiscordTNT",
     STATUS: "online"
 });
 

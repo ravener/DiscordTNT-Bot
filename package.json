@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/freetnt5852/DiscordTNT-Bot/issues"
   },
-  "homepage": "https://github.com/freetnt5852/DiscordTNT-Bot#readme"
+  "homepage": "https://github.com/freetnt5852/DiscordTNT-Bot#readme",
+  "dependencies": {
+    "discord-tnt": "github:freetnt5852/discord-tnt"
+  }
 }

@@ -21,17 +21,12 @@ client.on("messageCreate", message => {
   if(message.author.bot) return; // ignore bots
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  if(command === "ping") {
-   client.sendMessage(message.channel_id, "Pong!");
-  } else if(command === "eval") {
-      if(!devs.includes(message.author.id)) return client.sendMessage(message.channel_id, "This command is for devs only");
-      try {
-        let evaled = eval(args.join(" "));
-        client.sendMessage(message.channel_id, `\`\`\`js\n${evaled}\`\`\``);
-     } catch(e) {
-        client.sendMessage(message.channel_id, `\`\`\`${e}\`\`\``);
-     }
-   }
+  try {
+    let commandFile = require(`./commands/${command}.js`);
+    commandFile.run(client, message, args);
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 client.connect();

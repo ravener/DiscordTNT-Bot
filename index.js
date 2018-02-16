@@ -6,7 +6,7 @@ const client = new DiscordTNT.Client({
     STATUS: "online"
 });
 
-const devs = [
+client.devs = [
  "292690616285134850"
 ];
 

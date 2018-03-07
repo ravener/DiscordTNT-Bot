@@ -13,8 +13,8 @@ client.devs = [
 
 const prefix = "d.";
 
-client.on("ready", ready => {
-  console.log(`Logged in as ${ready.user.username}`);
+client.on("ready", () => {
+  console.log(`Logged in as ${client.self.username}`);
 });
 
 client.on("messageCreate", message => {

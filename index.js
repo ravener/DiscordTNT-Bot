@@ -3,7 +3,7 @@ const config = require("./config.json");
 const client = new DiscordTNT.Client({
     TOKEN:config.token,
     GAME:"with DiscordTNT",
-    STATUS: "online" 
+    STATUS: "online",
     DEBUG: true
 });
 

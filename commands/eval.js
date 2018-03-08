@@ -20,7 +20,7 @@ exports.run = async (client, message, args) => {
     if (output.length < 1950) {
       client.sendMessage(m, `\`\`\`js\n${output}\n\`\`\``);
     } else {
-    	  { body } = await post("https://hastebin.com/documents").send(output);
+    	 const { body } = await post("https://hastebin.com/documents").send(output);
     	  client.sendMessage(m, `Output was too long so it was uploaded to hastebin\nhttps://hastebin.com/${body.key}`);
     }
   } catch (error) {

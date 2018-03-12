@@ -1,5 +1,5 @@
 exports.run = (client, message, args) => {
-	client.sendMessage(m, `\`\`\`asciidoc\n == Help ==
+	client.sendMessage(message.channel_id, `\`\`\`asciidoc\n == Help ==
 • ping :: Pong! Checks websocket latency.
 • say :: Bot repeats what you say.
 • embed :: Send a simple RichEmbed.

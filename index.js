@@ -18,7 +18,7 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate", message => {
-  if(message.content.indexOf(prefix) !== 0) return;
+  if(message.content.indexOf(prefix) !== 0) return; // ignore msgs that don't start with prefix.
   if(message.author.bot) return; // ignore bots
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
@@ -28,6 +28,14 @@ client.on("messageCreate", message => {
   } catch (err) {
     console.error(err);
   }
+});
+
+client.on("resume", () => {
+	client.sendMessage("422062942268424202", "<@292690616285134850> Websocket resumed!");
+});
+
+client.on("disconnect", (c) => {
+	console.log(`[WS] [Close] Code: ${c}`);
 });
 
 client.connect();

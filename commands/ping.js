@@ -1,3 +1,3 @@
 exports.run = (client, message, args) => {
- client.sendMessage(message.channel_id, "Pong!");
- };
+ client.sendMessage(message.channel_id, `Pong! Websocket Latency: ${client.ping}`);
+};
